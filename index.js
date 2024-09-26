@@ -1,12 +1,13 @@
 const express = require("express")
-const app = express()
-const dbConnection = require("./config/config")
 const router = require("./routes/task")
+const app = express()
+const dbConnection = require('./config/config');
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", router)
+
 
 dbConnection()
 
